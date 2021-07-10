@@ -78,7 +78,6 @@ body {
 .btn-info {
   margin-left: 20%;
   margin-top: 10%;
-  margin-bottom: 1%;
   margin-right: 0%;
   padding-left: 50%;
   padding-right: 50%;
@@ -89,13 +88,12 @@ body {
 }
 .form-control {
   margin-top: 23px;
-  margin-bottom: 2px;
   margin-left: 20px;
 }
 .underline {
   color: rgb(8, 8, 8);
   font-weight: bolder;
-  margin: 0% 3% 4% 14%;
+  margin: 0 3% 4% 14%;
   opacity: 70%;
 }
 .cityToday {
@@ -113,7 +111,6 @@ body {
   padding: 0;
   text-align: center;
   border: none;
-  background-color: #edf3f1;
 }
 .list-group-item {
   background: #edf3f1;
