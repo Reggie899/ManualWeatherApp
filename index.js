@@ -1,140 +1,190 @@
-body {
-  font-family: sans-serif;
-  background: #ebdbea;
+let now = new Date();
+
+let currentDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let time1 = now.getHours();
+let time2 = now.getMinutes();
+
+function numberZero() {
+  if (time1 < 10) {
+    time1 = `0${time1}`;
+  }
+  if (time2 < 10) {
+    time2 = `0${time2}`;
+  }
+  return `${time1}:${time2}`;
 }
 
-.toDo {
-  margin: 200px 0px 0px 50px;
-  border: width 1px;
-  border: solid;
-  background: #edf3f1;
-  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-  opacity: 70%;
-  padding: 0 20px 0 10px;
-  box-shadow: 8px 14px 10px grey;
-}
-.toDo::before {
-  content: " ";
-  margin: -200px -50px 2px -10px;
-  border: width 1px;
-  border: solid;
+let currentDay = currentDays[now.getDay()];
+document.body.innerHTML = document.body.innerHTML.replace(
+  "11:05 AM",
+  //currentDay + " " + time1 + ":" + time2
+  currentDay + " " + numberZero()
+);
 
-  padding: 0% 20px 480px 296px;
-  padding-right: 8%;
-  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
-  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-  opacity: 70%;
+//let cityInput = document.querySelector("#bigForm");
+let searchForm = document.querySelector("#biggerForm");
+
+function todayTemp(response) {
+  console.log(response.data);
+  document.querySelector("#cityDisplay1").innerHTML = response.data.name;
+  document.querySelector("#todayTemp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#descritpion").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#min").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#max").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
 }
-.titleToDo {
-  font-family: "Indie Flower", cursive;
-  font-size: 26px;
-  font-weight: bolder;
-  border: width 1px;
-  border: solid;
-  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-  background: #edf3f1;
-  margin-top: 5px;
-  display: block;
-  text-align: center;
-  padding: 5px;
-  margin: 30px 15px 15px 15px;
-  opacity: 75%;
+
+function search(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#bigForm").value;
+  let apiKey = "e49d8a2ceb4c7b4bb750c995e9734044";
+  let myUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+  axios.get(myUrl).then(todayTemp);
+  //let cityElement = document.querySelector("#cityDisplay1");
+  //let cityInput = document.querySelector("#bigForm");
+  //let searchForm = document.querySelector("#biggerForm");
+  //cityElement.innerHTML = cityInput.value;
 }
-.ideas {
-  padding-top: 20px;
-  padding-left: 55px;
-  padding-right: -10px;
-  font-family: "Indie Flower", cursive;
-  font-size: 24px;
-  opacity: 80%;
-  box-shadow: 60%;
+//axios.get(myUrl).then(search);
+
+searchForm.addEventListener("submit", search);
+
+document.getElementById("bigButton").addEventListener("click", search);
+
+//function showTemperature(response) {
+//console.log(response);
+//let cityTemp = Math.round(cityInput.response.data.main.temp);
+//let tempDisplay = document.querySelector("#todayTemp");
+//tempDisplay.innerHTML = Math.round(response.data);
+//}
+
+//axios.get(`${apiUrl}&appid=${apiKey}`).then(showTempterature);
+//axios.get(apiUrl).then(showTemperature);
+
+//let currentDayTemp = cityInput;
+//document.body.innerHTML = document.body.innerHTML.replace(
+// "#tempDisplay",
+//currentDayTemp
+//);
+
+function showTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#todayTemp");
+  temperatureElement.innerHTML = temperature;
 }
-.idea1 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+let city = document.querySelector("#bigForm");
+let now = new Date();
+
+let currentDays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+let time1 = now.getHours();
+let time2 = now.getMinutes();
+
+function numberZero() {
+  if (time1 < 10) {
+    time1 = `0${time1}`;
+  }
+  if (time2 < 10) {
+    time2 = `0${time2}`;
+  }
+  return `${time1}:${time2}`;
 }
-.idea2 {
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+let currentDay = currentDays[now.getDay()];
+document.body.innerHTML = document.body.innerHTML.replace(
+  "11:05 AM",
+  //currentDay + " " + time1 + ":" + time2
+  currentDay + " " + numberZero()
+);
+
+//let cityInput = document.querySelector("#bigForm");
+let searchForm = document.querySelector("#biggerForm");
+
+function todayTemp(response) {
+  console.log(response.data);
+  document.querySelector("#cityDisplay1").innerHTML = response.data.name;
+  document.querySelector("#todayTemp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#descritpion").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#min").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#max").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
 }
-.idea3 {
-  padding-top: 20px;
-  padding-bottom: 60px;
+
+function search(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#bigForm").value;
+  let apiKey = "e49d8a2ceb4c7b4bb750c995e9734044";
+  let myUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+  axios.get(myUrl).then(todayTemp);
+  //let cityElement = document.querySelector("#cityDisplay1");
+  //let cityInput = document.querySelector("#bigForm");
+  //let searchForm = document.querySelector("#biggerForm");
+  //cityElement.innerHTML = cityInput.value;
 }
-.weather {
-  margin: -460px 0px 300px 535px;
-  padding-left: 0;
-  padding-right: 0;
-  border: width 1px;
-  border: solid;
-  background: #edf3f1;
-  opacity: 70%;
+//axios.get(myUrl).then(search);
+
+searchForm.addEventListener("submit", search);
+
+document.getElementById("bigButton").addEventListener("click", search);
+
+//function showTemperature(response) {
+//console.log(response);
+//let cityTemp = Math.round(cityInput.response.data.main.temp);
+//let tempDisplay = document.querySelector("#todayTemp");
+//tempDisplay.innerHTML = Math.round(response.data);
+//}
+
+//axios.get(`${apiUrl}&appid=${apiKey}`).then(showTempterature);
+//axios.get(apiUrl).then(showTemperature);
+
+//let currentDayTemp = cityInput;
+//document.body.innerHTML = document.body.innerHTML.replace(
+// "#tempDisplay",
+//currentDayTemp
+//);
+
+function showTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#todayTemp");
+  temperatureElement.innerHTML = temperature;
 }
-.weatherSearch {
-  margin: 3% 1% 3% 5%;
-  opacity: 70%;
-  padding-left: 5%;
-  font-size: 23px;
-}
-.btn-info {
-  margin-left: -7%;
-  margin-top: 8%;
-  margin-bottom: 1%;
-  margin-right: 0%;
-  padding-left: 30%;
-  padding-right: 30%;
-  border: solid;
-  border-color: #d1dcf0;
-  opacity: 70%;
-  background-color: #d1dcf0;
-}
-.underline {
-  color: rgb(8, 8, 8);
-  font-weight: bolder;
-  margin: 3.2% 3% 4% 4%;
-  position: absolute;
-  opacity: 70%;
-}
-.cityToday {
-  padding: 3% 1% 0 7%;
-  margin: 1% 4% 1% 2%;
-}
-.cityDisplay {
-  text-decoration: underline dotted;
-  padding: 0% 5% 0% 0%;
-  font-size: 30px;
-  text-align: center;
-}
-.forecast {
-  margin: 4% 5% 4% 2%;
-  padding: 0;
-  text-align: center;
-  border: none;
-}
-.list-group-item {
-  background: #edf3f1;
-}
-.additionalInfo {
-  padding-top: 4%;
-  line-height: 0.9;
-  opacity: 70%;
-}
-.todayTemp {
-  padding: 0% 5% 0% 0%;
-  font-size: 27px;
-  text-align: center;
-  font-weight: bolder;
-  opacity: 80%;
-}
-.minMax {
-  border: solid;
-  border-width: 9%;
-  opacity: 60%;
-  border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
-  text-align: center;
-  padding: 0.3%;
-  margin: 2% 23% 15% 15%;
-  background: rgb(207, 203, 203);
-  border-width: lighter;
-  font-weight: bold;
-}
+
+let city = document.querySelector("#bigForm");
