@@ -98,3 +98,13 @@ function showTemperature(response) {
 }
 
 let city = document.querySelector("#bigForm");
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#todayTemp");
+  let fahrenheitTemperature = (2 * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
