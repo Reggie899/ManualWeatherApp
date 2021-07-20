@@ -1,3 +1,4 @@
+let celciusTemperature = "";
 let now = new Date();
 
 let currentDays = [
@@ -103,7 +104,7 @@ let city = document.querySelector("#bigForm");
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todayTemp");
-  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
