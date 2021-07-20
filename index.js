@@ -56,6 +56,7 @@ function todayTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celciusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -102,7 +103,7 @@ let city = document.querySelector("#bigForm");
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todayTemp");
-  let fahrenheitTemperature = (2 * 9) / 5 + 32;
+  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
