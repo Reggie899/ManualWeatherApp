@@ -103,10 +103,23 @@ let city = document.querySelector("#bigForm");
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#todayTemp");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#todayTemp");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
 let fahrenheitLink = document.querySelector("#fahrenheitLink");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
