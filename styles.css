@@ -147,3 +147,9 @@ a.active {
 a.active:hover {
   text-decoration-line: none;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
