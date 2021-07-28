@@ -34,6 +34,14 @@ document.body.innerHTML = document.body.innerHTML.replace(
 //let cityInput = document.querySelector("#bigForm");
 let searchForm = document.querySelector("#biggerForm");
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e49d8a2ceb4c7b4bb750c995e9734044";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function todayTemp(response) {
   console.log(response.data);
   document.querySelector("#cityDisplay1").innerHTML = response.data.name;
@@ -58,6 +66,7 @@ function todayTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   celciusTemperature = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 
 function search(event) {
@@ -123,3 +132,34 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsiusLink");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<ul class="list-group list-group-flush">
+                    <li class="list-group-item" ><span class"weather-forecast-date">${day}:</span><img class="pic" src="http://openweathermap.org/img/wn/10d@2x.png"/><span class="weather-forecast-temperatures"><span class="weather-forecast-temperature-min">  12°C</span>/<span class="weather-forecast-temperature-max">19°C</span></span> </li>
+                    
+                  </ul>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+//displayForecast();
+
+//<li class="list-group-item">Saturday: 13°C/20°C 🌥</li>
+//                    <li class="list-group-item">Sunday: 15°C/22°C ☀</li>
+//                   <li class="list-group-item">Monday: 19°C/25°C ☀</li>
+//                    <li class="list-group-item">Tuesday: 19°C/27°C 🌩</li>

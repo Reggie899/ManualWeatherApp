@@ -161,6 +161,7 @@ a:hover {
   text-align: center;
   padding-top: 12px;
   border-radius: 45%;
+  opacity: 75%;
 }
 
 .pic {
