@@ -110,6 +110,7 @@ body {
   padding: 0;
   text-align: center;
   border: none;
+  font-size: 13px;
 }
 .list-group-item {
   background: #edf3f1;
@@ -160,4 +161,9 @@ a:hover {
   text-align: center;
   padding-top: 12px;
   border-radius: 45%;
+}
+
+.pic {
+  width: 20%;
+  height: auto;
 }
