@@ -159,7 +159,7 @@ function displayForecast(response) {
         `<ul class="list-group list-group-flush">
                     <li class="list-group-item" ><span class"weather-forecast-date">${formatDay(
                       forecastDay.dt
-                    )}${index}:</span><img class="pic" src="http://openweathermap.org/img/wn/${
+                    )}:</span><img class="pic" src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png"/><span class="weather-forecast-temperatures"><span class="weather-forecast-temperature-min">  ${Math.round(
           forecastDay.temp.min
