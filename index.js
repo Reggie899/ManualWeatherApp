@@ -133,26 +133,42 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsiusLink");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "";
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
   let days = [
-    "Thursday",
-    "Friday",
-    "Saturday",
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<ul class="list-group list-group-flush">
-                    <li class="list-group-item" ><span class"weather-forecast-date">${day}:</span><img class="pic" src="http://openweathermap.org/img/wn/10d@2x.png"/><span class="weather-forecast-temperatures"><span class="weather-forecast-temperature-min">  12°C</span>/<span class="weather-forecast-temperature-max">19°C</span></span> </li>
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<ul class="list-group list-group-flush">
+                    <li class="list-group-item" ><span class"weather-forecast-date">${formatDay(
+                      forecastDay.dt
+                    )}${index}:</span><img class="pic" src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"/><span class="weather-forecast-temperatures"><span class="weather-forecast-temperature-min">  ${Math.round(
+          forecastDay.temp.min
+        )}°C</span>/<span class="weather-forecast-temperature-max">${Math.round(
+          forecastDay.temp.max
+        )}°C</span></span> </li>
                     
                   </ul>`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
