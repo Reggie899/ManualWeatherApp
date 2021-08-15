@@ -179,3 +179,4 @@ function displayForecast(response) {
 //                    <li class="list-group-item">Sunday: 15°C/22°C ☀</li>
 //                   <li class="list-group-item">Monday: 19°C/25°C ☀</li>
 //                    <li class="list-group-item">Tuesday: 19°C/27°C 🌩</li>
+//test 
