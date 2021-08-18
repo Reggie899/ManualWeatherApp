@@ -1,5 +1,5 @@
-let celciusTemperature = "";
-let now = new Date();
+let celciusTemperature = ""; //just for this to be defined so I can use it in a function
+let now = new Date(); //so it can be read from the data offered 
 
 let currentDays = [
   "Sunday",
@@ -9,10 +9,10 @@ let currentDays = [
   "Thursday",
   "Friday",
   "Saturday",
-];
+]; //looks better wuth three letters - needs HTML adjustment 
 
-let time1 = now.getHours();
-let time2 = now.getMinutes();
+let time1 = now.getHours(); //getting right data
+let time2 = now.getMinutes(); //getting right data
 
 function numberZero() {
   if (time1 < 10) {
@@ -22,17 +22,17 @@ function numberZero() {
     time2 = `0${time2}`;
   }
   return `${time1}:${time2}`;
-}
+} //function to add the 0 - stands for itself 
 
 let currentDay = currentDays[now.getDay()];
 document.body.innerHTML = document.body.innerHTML.replace(
   "11:05 AM",
   //currentDay + " " + time1 + ":" + time2
   currentDay + " " + numberZero()
-);
+); //how does it know the day? - the rest is clear on the HTML replacing 
 
-//let cityInput = document.querySelector("#bigForm");
-let searchForm = document.querySelector("#biggerForm");
+//let cityInput = document.querySelector("#bigForm"); - not needed?
+let searchForm = document.querySelector("#biggerForm"); // What is this? 
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -40,7 +40,7 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
-}
+} //is it important to write cooridinates there? I guess for accessing it? -but yeah, this gets me the data needed 
 
 function todayTemp(response) {
   console.log(response.data);
@@ -67,6 +67,18 @@ function todayTemp(response) {
   );
   celciusTemperature = response.data.main.temp;
   getForecast(response.data.coord);
+  //starting my experimental function to change the do list here: 
+  document.getElementById("toDo1").innerHTML = toDo1ideas(); 
+
+  //document.querySelector("toDo1").innerHTML = "Test1";
+  //document.body.innerHTML = document.body.innerHTML.replace("Trying out a new sort of 🍧", "test1"); 
+} //will I input it here to access the to Do idea HTML?
+
+function toDo1ideas(){
+  if (document.querySelector("#todayTemp").innerHTML < 10) //{ time1 = `0${time1}`;}
+ //if (time2 < 10) {time2 = `0${time2}`; }
+  return `Stay inside`;
+  else return `Go outside`; 
 }
 
 function search(event) {
@@ -79,12 +91,12 @@ function search(event) {
   //let cityInput = document.querySelector("#bigForm");
   //let searchForm = document.querySelector("#biggerForm");
   //cityElement.innerHTML = cityInput.value;
-}
+} //Why did I get that twice? Seems not right. Maybe the other one is just for the log?
 //axios.get(myUrl).then(search);
 
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", search); 
 
-document.getElementById("bigButton").addEventListener("click", search);
+document.getElementById("bigButton").addEventListener("click", search); //these two help me with starting the search function in both ways
 
 //function showTemperature(response) {
 //console.log(response);
@@ -171,7 +183,7 @@ function displayForecast(response) {
     }
   });
   forecastElement.innerHTML = forecastHTML;
-}
+} 
 
 //displayForecast();
 
