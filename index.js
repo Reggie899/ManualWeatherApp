@@ -69,17 +69,72 @@ function todayTemp(response) {
   getForecast(response.data.coord);
   //starting my experimental function to change the do list here: 
   document.getElementById("toDo1").innerHTML = toDo1ideas(); 
+  document.getElementById("toDo2").innerHTML = toDo2ideas(); 
+  document.getElementById("toDo3").innerHTML = toDo3ideas(); 
+
 
   //document.querySelector("toDo1").innerHTML = "Test1";
   //document.body.innerHTML = document.body.innerHTML.replace("Trying out a new sort of 🍧", "test1"); 
 } //will I input it here to access the to Do idea HTML?
 
+//toDo111111111111111111-----1111111111111111------1111111111111111111
+
 function toDo1ideas(){
-  if (document.querySelector("#todayTemp").innerHTML < 10) //{ time1 = `0${time1}`;}
+  //if (document.querySelector("#todayTemp").innerHTML < 10) //{ time1 = `0${time1}`;}
  //if (time2 < 10) {time2 = `0${time2}`; }
-  return `Stay inside`;
-  else return `Go outside`; 
+ //if (document.querySelector("#icon").innerHTML = "01d")
+ if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
+  return ("Text a friend 📲")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
+  return ("Take a walk 👣")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
+  return ("Buy cheese 🧀")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
+  return ("Create a playlist 💽")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
+  return ("Dance to a song 💃🕺")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
+  return ("Hide under a blanket 👀")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
+  return ("Watch the stars ✨🔭")}
+ else {return("Take a nap 😴")}; 
 }
+
+function toDo2ideas(){
+ if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
+  return ("Read a book 📚")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
+  return ("Eat a salad 🥗")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
+  return ("Don't text your ex 😑☝️")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
+  return ("Wear something bright 👗")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
+  return ("Make a card 🖌🌈")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
+  return ("Stay inside ☝️")}
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
+  return ("Prepare your to do list for the next day 📝")}
+ else {return("Brush your teeth 🪥")}; 
+}
+
+function toDo3ideas(){
+  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
+   return ("Clean up 🧹🧽")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
+   return ("Call a friend 📲")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
+   return ("List the top 5 things about yourself 👑")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
+   return ("Write into your diary 📖✍️")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
+   return ("Cook something yummy 🍝🤤")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
+   return ("Watch a movie 🎥🍿")}
+   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
+   return ("Reflect on the day 🧐")}
+  else {return("Make a wish 🧞‍♂️")}; 
+ }
 
 function search(event) {
   event.preventDefault();
