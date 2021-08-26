@@ -9,7 +9,7 @@ let currentDays = [
   "Thursday",
   "Friday",
   "Saturday",
-]; //looks better wuth three letters - needs HTML adjustment 
+]; //looks better with three letters - needs HTML adjustment 
 
 let time1 = now.getHours(); //getting right data
 let time2 = now.getMinutes(); //getting right data
@@ -204,13 +204,13 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
   ];
   return days[day];
 }
