@@ -84,56 +84,56 @@ function toDo1ideas(){
  //if (time2 < 10) {time2 = `0${time2}`; }
  //if (document.querySelector("#icon").innerHTML = "01d")
  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
-  return ("Text a friend 📲")}
+  return ("Texting a friend 📲")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
-  return ("Take a walk 👣")}
+  return ("Taking a walk 👣")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
-  return ("Buy cheese 🧀")}
+  return ("Buying cheese 🧀")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
-  return ("Create a playlist 💽")}
+  return ("Creating a playlist 💽")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
-  return ("Dance to a song 💃🕺")}
+  return ("Dancing to a song 💃🕺")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
-  return ("Hide under a blanket 👀")}
+  return ("Hiding under a blanket 👀")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
-  return ("Watch the stars ✨🔭")}
- else {return("Take a nap 😴")}; 
+  return ("Watching the stars ✨🔭")}
+ else {return("Taking a nap 😴")}; 
 }
 
 function toDo2ideas(){
  if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
-  return ("Read a book 📚")}
+  return ("Reading a book 📚")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
-  return ("Eat a salad 🥗")}
+  return ("Eating a salad 🥗")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
-  return ("Don't text your ex 😑☝️")}
+  return ("Not texting your ex 😑☝️")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
-  return ("Wear something bright 👗")}
+  return ("Wearing something bright 👗")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
-  return ("Make a card 🖌🌈")}
+  return ("Making a card 🖌🌈")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
-  return ("Stay inside ☝️")}
+  return ("Staying inside ☝️")}
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
-  return ("Prepare your to do list for the next day 📝")}
- else {return("Brush your teeth 🪥")}; 
+  return ("Preparing your to do list for the next day 📝")}
+ else {return("Brushing your teeth 🪥")}; 
 }
 
 function toDo3ideas(){
   if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/09d@2x.png") { //rain 09
-   return ("Clean up 🧹🧽")}
+   return ("Cleaning up 🧹🧽")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01d@2x.png") { //sun 01
-   return ("Call a friend 📲")}
+   return ("Calling a friend 📲")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/04d@2x.png") { //clouds 2 x 04
-   return ("List the top 5 things about yourself 👑")}
+   return ("Listing the top 5 things you like about yourself 👑")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/02d@2x.png") { //clouds and sun 02
-   return ("Write into your diary 📖✍️")}
+   return ("Writing into your diary 📖✍️")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/03d@2x.png") { //clouds 1 x 03
-   return ("Cook something yummy 🍝🤤")}
+   return ("Cooking something yummy 🍝🤤")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/11d@2x.png") { //Storm 11
-   return ("Watch a movie 🎥🍿")}
+   return ("Watching a movie 🎥🍿")}
    if (document.getElementById("icon").src == "http://openweathermap.org/img/wn/01n@2x.png") { //Night 01n
-   return ("Reflect on the day 🧐")}
-  else {return("Make a wish 🧞‍♂️")}; 
+   return ("Reflecting on the day 🧐")}
+  else {return("Making a wish 🧞‍♂️")}; 
  }
 
 function search(event) {

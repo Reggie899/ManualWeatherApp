@@ -5,7 +5,7 @@ body {
   //background: #ebdbea; */
 }
 .toDo {
-  margin: 200px 0px 0px 50px;
+  margin: 100px 0px 23px 50px;
   border: width 1px;
   border: solid;
   background: #fdef24;
@@ -62,7 +62,7 @@ body {
   padding-bottom: 60px;
 }
 .weather {
-  margin: -460px 0px 300px 535px;
+  margin: -510px 0px 40px 535px;
   padding-left: 0;
   padding-right: 0;
   border: width 1px;
